@@ -720,7 +720,7 @@ export const getAggregatedData = async () => {
     const weatherInfo = await getWeather(useProvince, useCity)
     const weatherMessage = Object.keys(weatherInfo).map((item) => ({
       name: toLowerLine(item),
-      value: getWeatherIcon(weatherInfo[item]) + weatherInfo[item] || '获取失败',
+      value: weatherInfo[item] || '获取失败',
       color: getColor(),
     }))
 
